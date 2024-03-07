@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ projet.projetTitre }}{% endblock %}
+
+{% block body %}
+    <h1>{{ projet.projetTitre }}</h1>
+
+    <p>{{ projet.projetDesc }}</p>
+
+    <a href="{{ projet.projetUrl }}">{{ projet.projetUrl }}</a>
+
+    <h2>Technologies utilisées</h2>
+
+    <ul>
+        {% for techno in projet.technos %}
+            <li>{{ techno.technoNom }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
